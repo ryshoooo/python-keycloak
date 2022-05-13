@@ -60,6 +60,10 @@ class KeycloakGetError(KeycloakOperationError):
     pass
 
 
+class KeycloakPostError(KeycloakOperationError):
+    pass
+
+
 class KeycloakSecretNotFound(KeycloakOperationError):
     pass
 
@@ -90,7 +94,7 @@ def raise_error_from_response(response, error, expected_codes=None, skip_exists=
             return response.content
 
     if skip_exists and response.status_code == 409:
-        return {"Already exists"}
+        return {"msg": "Already exists"}
 
     try:
         message = response.json()["message"]

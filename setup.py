@@ -19,6 +19,7 @@ setup(
     packages=["keycloak", "keycloak.authorization"],
     install_requires=["requests>=2.20.0", "python-jose>=1.4.0", "urllib3>=1.26.0"],
     tests_require=["httmock>=1.2.5"],
+    python_requires=">=3.7",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
